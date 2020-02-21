@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Theme from "./Theme";
 import { StylesProvider } from '@material-ui/core/styles';
 import './App.scss';
@@ -23,6 +23,8 @@ const target = {
 
 function App() {
 
+  const [darkMode, toggleTheme] = useState(false);
+
   const getTarget = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -32,10 +34,10 @@ function App() {
   }
 
   return (
-    <Theme>
+    <Theme darkMode={darkMode}>
       <StylesProvider injectFirst>
         <div className="App">
-          <Info getTarget={getTarget} />
+          <Info getTarget={getTarget} darkMode={darkMode} toggleTheme={() => toggleTheme(!darkMode)} />
         </div>
       </StylesProvider>
     </Theme>
