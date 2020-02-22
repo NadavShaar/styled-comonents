@@ -16,8 +16,6 @@ const StyledButton = styled(({ color, fullWidth, size, ...rest }) => <MuiButton 
   text-transform: capitalize;
   padding: 3px 15px;
   border-radius: 15px;
-  min-height: ${props => `${props.size}px`};
-  min-width: ${props => `${props.size}px`};
   font-weight: 400;
   white-space: nowrap;
   ${props => props.styles};
@@ -25,16 +23,6 @@ const StyledButton = styled(({ color, fullWidth, size, ...rest }) => <MuiButton 
     background-color: ${props => lighten(props.color || props.theme.colors.secondary, .15)};
   }
 `;
-
-StyledButton.propTypes = {
-  size: PropTypes.number,
-  styles: PropTypes.object
-};
-
-StyledButton.defaultProps = {
-  size: 30, 
-  styles: {}
-};
 
 const StyledOutlinedButton = styled(StyledButton)`
   background-color: ${props => props.theme.colors.color1};
@@ -53,20 +41,20 @@ const animatedButtonSharedStyle = css`
   position: absolute;
   left: 0px;
   top: 0px;
-  width: ${props => `${props.size || 30}px`};
-  height: ${props => `${props.size || 30}px`};
-  line-height: ${props => `${props.size || 30}px`};
-  border-radius: ${props => `${props.size / 2 || 15}px`};
+  width: ${props => `${props.size}px`};
+  height: ${props => `${props.size}px`};
+  line-height: ${props => `${props.size}px`};
+  border-radius: ${props => `${props.size / 2}px`};
   background-color: ${props => props.color || props.theme.colors.secondary};
-  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  box-shadow: ${props => props.theme.shadows.lvl1};
   transition: all .15s ease-in-out;
 `;
 
 const StyledAnimatedButton = styled.div`
   display: inline-block;
   position: relative;
-  height: ${props => `${props.size || 30}px`};
-  width: ${props => `${props.fullWidth || 115}px`};
+  height: ${props => `${props.size}px`};
+  width: ${props => `${props.fullWidth}px`};
 
   .icon_wrapper {
     display: inline-flex;
@@ -75,7 +63,7 @@ const StyledAnimatedButton = styled.div`
     cursor: pointer;
     z-index: 1;
     ${props => animatedButtonSharedStyle};
-    ${props => props.buttonStyles || {}};
+    ${props => props.buttonStyles};
 
     i {
       transition: transform .15s ease-in-out;
@@ -87,7 +75,7 @@ const StyledAnimatedButton = styled.div`
     }
 
     &:hover ~ .label_container {
-      width: ${props => `${props.fullWidth || 115}px`};
+      width: ${props => `${props.fullWidth}px`};
     }
 
     &:hover ~ .label_container > .label{
@@ -103,15 +91,15 @@ const StyledAnimatedButton = styled.div`
   .label_container {
     display: block;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
     ${props => animatedButtonSharedStyle};
     ${props => props.labelContainerStyles || {}};
 
     .label {
-      margin: ${props => `0px 8px 0px ${(props.size || 30) + 8}px`};
+      margin: ${props => `0px 8px 0px ${props.size + 8}px`};
       display: block;
       position: relative;
-      left: ${props => `-${(props.fullWidth || 115) - ((props.size || 30) + 8)}px`};
+      left: ${props => `-${props.fullWidth - props.size + 8}px`};
       transition: all .15s ease-in-out;
       color: ${props => props.theme.colors.color1};
       ${props => props.labelStyles || {}};
@@ -140,6 +128,17 @@ function BaseButton(props) {
   )
 };
 
+BaseButton.propTypes = {
+  iconProps: PropTypes.object,
+  color: PropTypes.string,
+  styles: PropTypes.object
+};
+
+BaseButton.defaultProps = {
+  iconProps: {},
+  styles: {}
+};
+
 function OutlineButton(props) {
 
   const { children, iconProps, ...rest } = props;
@@ -156,6 +155,17 @@ function OutlineButton(props) {
   )
 };
 
+OutlineButton.propTypes = {
+  iconProps: PropTypes.object,
+  color: PropTypes.string,
+  styles: PropTypes.object
+};
+
+OutlineButton.defaultProps = {
+  iconProps: {},
+  styles: {}
+};
+
 function IconButton(props) {
 
   const { iconProps, ...rest } = props;
@@ -165,6 +175,17 @@ function IconButton(props) {
       <Icon { ...iconProps } />
     </StyledIconButton>
   )
+};
+
+IconButton.propTypes = {
+  iconProps: PropTypes.object,
+  color: PropTypes.string,
+  styles: PropTypes.object
+};
+
+IconButton.defaultProps = {
+  iconProps: {},
+  styles: {}
 };
 
 function AnimatedButton(props) {
@@ -183,6 +204,26 @@ function AnimatedButton(props) {
       </div>
     </StyledAnimatedButton>
   )
+};
+
+AnimatedButton.propTypes = {
+  iconProps: PropTypes.object,
+  color: PropTypes.string,
+  styles: PropTypes.object,
+  fullWidth: PropTypes.number,
+  buttonStyles: PropTypes.object,
+  labelContainerStyles: PropTypes.object,
+  labelStyles: PropTypes.object
+};
+
+AnimatedButton.defaultProps = {
+  iconProps: {},
+  styles: {},
+  size: 30,
+  fullWidth: 115,
+  buttonStyles: {},
+  labelContainerStyles: {},
+  labelStyles: {}
 };
 
 // ==============================================================================================================

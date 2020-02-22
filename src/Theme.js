@@ -19,11 +19,6 @@ const lightTheme = {
   backgrounds: {
     color1: "#fff"
   },
-  skeleton: {
-    light: "#bbb",
-    medium: "#888",
-    dark: "333"
-  },
   shadows: shadows
 };
 
@@ -35,12 +30,7 @@ const darkTheme = {
     color2: "#000"
   },
   backgrounds: {
-    color1: "#0D0D0D"
-  },
-  skeleton: {
-    light: "#bbb",
-    medium: "#888",
-    dark: "333"
+    color1: "#111"
   },
   shadows: shadows
 };

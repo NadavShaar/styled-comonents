@@ -4,7 +4,6 @@ import { LeftSidebar } from '../ui/Sidebar';
 import { Avatar } from '../ui/Avatars';
 import IconsList from '../ui/IconsList';
 import Button from '../ui/Buttons';
-import Loader from '../ui/Loaders';
 import Switch from '@material-ui/core/Switch';
 
 const Header = styled.div`
@@ -13,14 +12,17 @@ const Header = styled.div`
     position: relative;
 `;
 
-const Banner = styled.div`
+const Banner = styled.div.attrs(props => ({
+    className: props.isLoading ? 'skeleton' : ''
+}))`
     width: 100%;
     height: 150px;
-    background-image: ${props => props.isLoading ? '' : `url('${props.src}')`};
+    overflow: hidden;
+    position: relative;
+    background-image: ${props => `url('${props.src}')`};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-color: ${props => props.isLoading ? `${props.theme.skeleton.light} !important` : 'unset'};
 `;
 
 const ButtonsWrapper = styled.div`
@@ -56,10 +58,6 @@ function Info(props) {
                     value="darkMode"
                 />
             </div>
-            <Loader 
-                size='lg' 
-                isLoading={isLoading} 
-            />
             <Header>
                 <Banner 
                     isLoading={isLoading}
@@ -79,6 +77,7 @@ function Info(props) {
                     preset="social"
                     styles={{fontSize: 16, position: 'absolute', top: 160, left: 120}} 
                     countStyle={{marginLeft: 4, lineHeight: '20px', color: props.theme.colors.secondary}} 
+                    skeletonStyle={{width: 150, height: 20}}
                     iconProps={{
                         preset: 'social',
                         wrapperSize: 20,
@@ -104,17 +103,6 @@ function Info(props) {
                         iconProps={{ iconClass:'material-icons', iconName:'work_outline', color: props.theme.colors.secondary, size: 16, styles: {marginRight: 8} }}
                     >Add
                     </Button>
-                    {/* <Button 
-                        preset='animate'
-                        size={30}
-                        fullWidth={115}
-                        color='#ff2799'
-                        // labelStyles={{fontSize: 20}}
-                        // labelContainerStyles={{borderRadius: 4}}
-                        // buttonStyles={{borderRadius: 4}}
-                        iconProps={{ iconClass:'material-icons', iconName:'add', color: props.theme.colors.color1, size: 18 }}
-                    >Animated
-                    </Button> */}
                 </ButtonsWrapper>
             </Header>
         </LeftSidebar>

@@ -1,15 +1,31 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const StyledAvatar = styled.div`
+const StyledAvatar = styled.div.attrs(props => ({
+    className: props.isLoading ? `${props.className} skeleton` : props.className
+}))`
     width: ${props => props.size + 'px'};
     height: ${props => props.size + 'px'};
     border-radius: 50%;
-    background-image: ${props => props.isLoading ? '' : `url('${props.imgSrc}')`};
+    background-image: ${props => `url('${props.imgSrc}')`};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-color: ${props => props.isLoading ? `${props.theme.skeleton.medium} !important` : 'unset'};
-    ${props => props.styles};
+    overflow: hidden;
+    position: relative;
+    ${props => props.styles}
 `;
+
+StyledAvatar.propTypes = {
+    size: PropTypes.number,
+    imgSrc: PropTypes.string,
+    styles: PropTypes.object
+};
+  
+StyledAvatar.defaultProps = {
+    size: 50,
+    imgSrc: '',
+    styles: {}
+};
 
 export const Avatar = StyledAvatar;

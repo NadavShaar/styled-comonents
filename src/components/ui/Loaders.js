@@ -42,10 +42,13 @@ Loader.propTypes = {
     size: PropTypes.oneOfType([
         PropTypes.string, 
         PropTypes.number
-    ])
+    ]),
+    color: PropTypes.string,
+    isLoading: PropTypes.bool,
 };
   
 Loader.defaultProps = {
+    isLoading: undefined,
     size: 40
 };
 
