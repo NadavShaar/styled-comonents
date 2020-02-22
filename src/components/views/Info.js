@@ -68,7 +68,8 @@ function Info(props) {
                     onClick={e => toggleOpen(!isOpen)}
                     size={84} 
                     imgSrc={target?.avatar}
-                    styles={{position: 'absolute', top: 108, left: 18, border: '2px solid #fff', backgroundColor: '#fff', boxShadow: props.theme.shadows.lvl1}}
+                    styles={{position: 'absolute', top: 108, left: 18, border: '2px solid #fff', backgroundColor: '#fff'}}
+                    elevation={1}
                 />
                 <IconsList 
                     isLoading={isLoading}
@@ -94,7 +95,7 @@ function Info(props) {
                 /> */}
                 <ButtonsWrapper>
                     <Button 
-                        iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }} 
+                        iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }}
                         styles={{marginRight: 10}}
                     >Automatic Report
                     </Button>

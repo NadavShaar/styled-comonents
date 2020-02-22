@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import withShadow from '../hooks/withShadow.js'
 
 const StyledAvatar = styled.div.attrs(props => ({
     className: props.isLoading ? `${props.className} skeleton` : props.className
@@ -28,4 +29,4 @@ StyledAvatar.defaultProps = {
     styles: {}
 };
 
-export const Avatar = StyledAvatar;
+export const Avatar = withShadow(StyledAvatar);

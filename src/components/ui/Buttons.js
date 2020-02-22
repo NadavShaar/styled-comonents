@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { Button as MuiButton } from '@material-ui/core';
 import { lighten, darken } from './../../utils/colors';
 import Icon from './Icons';
+import withShadow from '../hooks/withShadow.js';
 
 // ==============================================================================================================
 // STYLED ELEMENTS
@@ -230,7 +231,7 @@ AnimatedButton.defaultProps = {
 // EXPORTS
 // ==============================================================================================================
 
-export default function Button(props) {
+function Button(props) {
   const { preset, ...rest } = props;
 
   switch (preset) {
@@ -240,3 +241,5 @@ export default function Button(props) {
     default: return BaseButton(rest);
   }
 };
+
+export default withShadow(Button);
