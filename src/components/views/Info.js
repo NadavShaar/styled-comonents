@@ -104,6 +104,14 @@ function Info(props) {
                         iconProps={{ iconClass:'material-icons', iconName:'work_outline', color: props.theme.colors.secondary, size: 16, styles: {marginRight: 8} }}
                     >Add
                     </Button>
+                    {/* <Button 
+                        preset='icon'
+                        size={50}
+                        iconProps={{ iconClass:'material-icons', iconName:'add', color: props.theme.colors.color1, size: 16 }}
+                        styles={{marginLeft: 10}}
+                        elevation={2}
+                    >
+                    </Button> */}
                 </ButtonsWrapper>
             </Header>
         </LeftSidebar>
