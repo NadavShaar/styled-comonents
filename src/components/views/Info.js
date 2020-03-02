@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { LeftSidebar } from '../ui/Sidebar';
+import Sidebar from '../ui/Sidebar';
 import { Avatar } from '../ui/Avatars';
 import IconsList from '../ui/IconsList';
 import Button from '../ui/Buttons';
-import Switch from '@material-ui/core/Switch';
+import Switch from '../ui/Switches';
 
 const Header = styled.div`
     width: 100%;
@@ -45,19 +45,18 @@ function Info(props) {
     }, [props]);
 
     return (
-        <LeftSidebar 
+        <Sidebar 
             size={420} 
+            preset="left"
             isOpen={isOpen} 
             onClose={() => toggleOpen(false)}
             styles={{background: props.theme.backgrounds.color1}}
         >
-            <div style={{position: 'absolute', top: 150, right: 10, zIndex: 1}}>
-                <Switch
-                    checked={props.darkMode}
-                    onChange={() => props.toggleTheme(props.darkMode)}
-                    value="darkMode"
-                />
-            </div>
+            <Switch
+                checked={props.darkMode}
+                onChange={() => props.toggleTheme(props.darkMode)}
+                styles={{position: 'absolute', top: 150, right: 10, zIndex: 1}}
+            />
             <Header>
                 <Banner 
                     isLoading={isLoading}
@@ -114,7 +113,7 @@ function Info(props) {
                     </Button> */}
                 </ButtonsWrapper>
             </Header>
-        </LeftSidebar>
+        </Sidebar>
     )
 }
 

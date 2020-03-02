@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -21,10 +22,22 @@ StyledSidebar.defaultProps = {
     styles: {}
 };
 
-export const LeftSidebar = styled(StyledSidebar)`
+const LeftSidebar = styled(StyledSidebar)`
     left: 0px;
 `;
 
-export const RightSidebar = styled(StyledSidebar)`
+const RightSidebar = styled(StyledSidebar)`
     right: 0px;
 `;
+
+function Sidebar(props) {
+    const { preset, ...rest } = props;
+  
+    switch (preset) {
+        case 'left': return <LeftSidebar { ...rest} />;
+        case 'right': return <RightSidebar { ...rest} />;
+        default: return <LeftSidebar { ...rest} />;
+    }
+};
+
+export default Sidebar;
