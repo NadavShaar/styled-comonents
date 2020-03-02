@@ -96,14 +96,26 @@ function Info(props) {
                     color={'red'} 
                 /> */}
                 <ButtonsWrapper>
-                    <Button style={{marginRight: 10}}>
+                    <Button 
+                        iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }}
+                        styles={{marginRight: 10}}
+                    >
+                        Automatic Report
+                    </Button>
+                    <Button 
+                        preset='outline'
+                        iconProps={{ iconClass:'material-icons', iconName:'work_outline', color: props.theme.colors.secondary, size: 16, styles: {marginRight: 8} }}
+                    >
+                        Add
+                    </Button>
+                    {/* <Button style={{marginRight: 10}}>
                         <Icon iconClass={'material-icons'} iconName={'assignment'} size={14} styles={{marginRight: 8}} />
                         Automatic Report
                     </Button>
                     <Button preset='outline'>
                         <Icon iconClass={'material-icons'} iconName={'work_outline'} color={props.theme.colors.secondary} size={16} style={{marginRight: 8}} />
                         Add
-                    </Button>
+                    </Button> */}
                     {/* <Button 
                         preset='icon'
                         size={50}
