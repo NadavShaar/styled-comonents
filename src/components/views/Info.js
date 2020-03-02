@@ -3,9 +3,10 @@ import styled, { withTheme } from 'styled-components';
 import Sidebar from '../ui/Sidebar';
 import { Avatar } from '../ui/Avatars';
 import IconsList from '../ui/IconsList';
-import Button from '../ui/Buttons';
 import Switch from '../ui/Switches';
+// import Button from '../ui/Buttons';
 // import Button from '../ui/Button.jsx';
+import Button from '../ui/Button1.jsx';
 import Icon from '../ui/Icons';
 // import Switch from '@material-ui/core/Switch';
 
@@ -96,7 +97,7 @@ function Info(props) {
                     color={'red'} 
                 /> */}
                 <ButtonsWrapper>
-                    <Button 
+                    {/* <Button 
                         iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }}
                         styles={{marginRight: 10}}
                     >
@@ -107,15 +108,15 @@ function Info(props) {
                         iconProps={{ iconClass:'material-icons', iconName:'work_outline', color: props.theme.colors.secondary, size: 16, styles: {marginRight: 8} }}
                     >
                         Add
-                    </Button>
-                    {/* <Button style={{marginRight: 10}}>
-                        <Icon iconClass={'material-icons'} iconName={'assignment'} size={14} styles={{marginRight: 8}} />
+                    </Button> */}
+                    <Button style={{marginRight: 10}}>
+                        <Icon iconClass={'material-icons'} iconName={'assignment'} size={14} style={{marginRight: 8}} />
                         Automatic Report
                     </Button>
                     <Button preset='outline'>
                         <Icon iconClass={'material-icons'} iconName={'work_outline'} color={props.theme.colors.secondary} size={16} style={{marginRight: 8}} />
                         Add
-                    </Button> */}
+                    </Button>
                     {/* <Button 
                         preset='icon'
                         size={50}
