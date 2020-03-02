@@ -15,8 +15,8 @@ const withShadow = (WrappedComponent) => {
         }
 
         render() {
-            const { elevation, ...rest } = this.props;
-            return <WrappedComponent style={{...this.getShadow(elevation)}} { ...rest } />;
+            const { elevation, style, ...rest } = this.props;
+            return <WrappedComponent style={{...this.getShadow(elevation), ...style}} { ...rest } />;
         }
     }
     

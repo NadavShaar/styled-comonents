@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { createMuiTheme, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider as MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
 
 const lightTheme = createMuiTheme({
   palette: {
@@ -44,7 +44,9 @@ const darkTheme = createMuiTheme({
 
 const Theme = ({ children, darkMode }) => (
   <MuiThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>{children}</ThemeProvider>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <StylesProvider injectFirst>{children}</StylesProvider>
+    </ThemeProvider>
   </MuiThemeProvider>
 );
 
