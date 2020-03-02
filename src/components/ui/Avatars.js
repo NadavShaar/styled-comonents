@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import withShadow from '../hooks/withShadow.js'
+import withShadow from '../HOCs/withShadow.js'
 
 const StyledAvatar = styled.div.attrs(props => ({
     className: props.isLoading ? `${props.className} skeleton` : props.className

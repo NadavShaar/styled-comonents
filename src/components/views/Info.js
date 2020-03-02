@@ -5,6 +5,9 @@ import { Avatar } from '../ui/Avatars';
 import IconsList from '../ui/IconsList';
 import Button from '../ui/Buttons';
 import Switch from '../ui/Switches';
+// import Button from '../ui/Button.jsx';
+import Icon from '../ui/Icons';
+// import Switch from '@material-ui/core/Switch';
 
 const Header = styled.div`
     width: 100%;
@@ -93,15 +96,13 @@ function Info(props) {
                     color={'red'} 
                 /> */}
                 <ButtonsWrapper>
-                    <Button 
-                        iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }}
-                        styles={{marginRight: 10}}
-                    >Automatic Report
+                    <Button style={{marginRight: 10}}>
+                        <Icon iconClass={'material-icons'} iconName={'assignment'} size={14} styles={{marginRight: 8}} />
+                        Automatic Report
                     </Button>
-                    <Button 
-                        preset='outline'
-                        iconProps={{ iconClass:'material-icons', iconName:'work_outline', color: props.theme.colors.secondary, size: 16, styles: {marginRight: 8} }}
-                    >Add
+                    <Button preset='outline'>
+                        <Icon iconClass={'material-icons'} iconName={'work_outline'} color={props.theme.colors.secondary} size={16} style={{marginRight: 8}} />
+                        Add
                     </Button>
                     {/* <Button 
                         preset='icon'
