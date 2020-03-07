@@ -7,7 +7,8 @@ import Switch from '../ui/Switches';
 // import Button from '../ui/Buttons';
 // import Button from '../ui/Button.jsx';
 import Button from '../ui/Button1.jsx';
-import Icon from '../ui/Icons';
+// import Icon from '../ui/Icons';
+import Icon from '../ui/MUIIcons';
 // import Switch from '@material-ui/core/Switch';
 
 const Header = styled.div`
@@ -89,13 +90,13 @@ function Info(props) {
                         styles: {marginRight: 5}
                     }}
                 />
-                {/* <Icon 
-                    // as="span"
-                    preset='gender'
-                    gender={target.gender} 
-                    iconSize={20} 
-                    color={'red'} 
-                /> */}
+                <Icon
+                    iconClass='material-icons'
+                    iconName='assignment'
+                    size={50}
+                    color='#f00'
+                    elevation={3}
+                />
                 <ButtonsWrapper>
                     {/* <Button 
                         iconProps={{ iconClass:'material-icons', iconName:'assignment', size: 14, styles: {marginRight: 8} }}

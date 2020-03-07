@@ -45,7 +45,7 @@ const darkTheme = createMuiTheme({
 const Theme = ({ children, darkMode }) => (
   <MuiThemeProvider theme={darkMode ? darkTheme : lightTheme}>
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <StylesProvider injectFirst>{children}</StylesProvider>
+      <StylesProvider injectFirst={false}>{children}</StylesProvider>
     </ThemeProvider>
   </MuiThemeProvider>
 );

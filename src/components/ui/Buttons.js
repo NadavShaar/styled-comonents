@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Button as MuiButton } from '@material-ui/core';
 import { lighten } from './../../utils/colors';
 import Icon from './Icons';
-import withShadow from '../HOCs/withShadow.js';
+import withShadow from '../hooks/withShadow.js';
 
 // ==============================================================================================================
 // BaseButton
