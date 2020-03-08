@@ -93,9 +93,11 @@ function Info(props) {
                 <Icon
                     iconClass='material-icons'
                     iconName='assignment'
+                    className='myClass'
                     size={50}
                     color='#f00'
                     elevation={3}
+                    preset='class'
                 />
                 <ButtonsWrapper>
                     {/* <Button 
