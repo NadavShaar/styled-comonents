@@ -8,7 +8,7 @@ import Switch from '../ui/Switches';
 // import Button from '../ui/Button.jsx';
 import Button from '../ui/Button1.jsx';
 // import Icon from '../ui/Icons';
-import Icon from '../ui/MUIIcons';
+import Icon from '../ui/icons/';
 // import Switch from '@material-ui/core/Switch';
 
 const Header = styled.div`
@@ -94,10 +94,11 @@ function Info(props) {
                     iconClass='material-icons'
                     iconName='assignment'
                     className='myClass'
-                    size={50}
+                    size={40}
+                    gap={20}
                     color='#f00'
+                    preset='round'
                     elevation={3}
-                    preset='class'
                 />
                 <ButtonsWrapper>
                     {/* <Button 
