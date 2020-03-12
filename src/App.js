@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import './App.scss';
 import Info from './components/views/Info';
 import target from './data'
-import Complex from './components/ui/Complex';
+// import Complex from './components/ui/Complex';
 
 const AppContainer = styled.div.attrs(props => ({
   className: "App"

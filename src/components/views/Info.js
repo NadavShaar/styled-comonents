@@ -73,7 +73,7 @@ function Info(props) {
                     size={84} 
                     imgSrc={target?.avatar}
                     styles={{position: 'absolute', top: 108, left: 18, border: '2px solid #fff', backgroundColor: '#fff'}}
-                    elevation={1}
+                    shadow={1}
                 />
                 <IconsList 
                     isLoading={isLoading}
@@ -97,7 +97,7 @@ function Info(props) {
                     gap={24}
                     color='#f00'
                     preset='round'
-                    elevation={3}
+                    shadow={2}
                 />
                 <ButtonsWrapper>
                     {/* <Button 

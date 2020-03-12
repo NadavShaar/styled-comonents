@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseIcon from './parts/BaseIcon';
 import RoundIcon from './parts/RoundIcon';
-import withElevation from './../../HOCs/withElevation';
+import withShadow from './../../HOCs/withShadow';
 
 function Icon(props) {
     const { preset, ...rest } = props;
@@ -12,4 +12,4 @@ function Icon(props) {
     }
 };
 
-export default withElevation(Icon);
+export default withShadow(Icon);

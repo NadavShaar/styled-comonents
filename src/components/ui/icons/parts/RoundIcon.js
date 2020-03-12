@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 function RoundIcon(props) {
     const classes2 = useStyles(props);
 
-    const { iconClass, iconName, color, size, className, baseIconProps, classes, ...rest } = props;
+    const { iconClass, iconName, color, size, className, baseIconProps, classes, gap, ...rest } = props;
 
     return (
         <div className={`${className} ${classes2.root}`} {...rest}>
@@ -35,13 +35,12 @@ RoundIcon.propTypes = {
     iconName: PropTypes.string,
     color: PropTypes.string,
     size: PropTypes.number,
-    circleSize: PropTypes.number,
+    gap: PropTypes.number,
     className: PropTypes.string
 };
 
 RoundIcon.defaultProps = {
     size: 24,
-    circleSize: 30,
     gap: 5,
     className: ''
 };
