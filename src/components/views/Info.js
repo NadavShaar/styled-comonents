@@ -7,6 +7,7 @@ import Switch from '../ui/Switches';
 // import Button from '../ui/Buttons';
 // import Button from '../ui/Button.jsx';
 import Button from '../ui/Button1.jsx';
+import Button1 from '../ui/buttons/';
 // import Icon from '../ui/Icons';
 import Icon from '../ui/icons/';
 // import Switch from '@material-ui/core/Switch';
@@ -120,6 +121,9 @@ function Info(props) {
                         <Icon iconClass={'material-icons'} iconName={'work_outline'} color={props.theme.colors.secondary} size={16} style={{marginRight: 8}} />
                         Add
                     </Button>
+                    <Button1 color='www' variant='contained'>
+                        www
+                    </Button1>
                     {/* <Button 
                         preset='icon'
                         size={50}

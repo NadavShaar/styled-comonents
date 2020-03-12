@@ -19,6 +19,9 @@ const lightTheme = createMuiTheme({
     secondary: {
       main: '#26599e',
     },
+    www: {
+      main: '#0f0',
+    },
   },
   colors: {
     primary: "#192b40",
@@ -42,6 +45,9 @@ const darkTheme = createMuiTheme({
     secondary: {
       main: '#2fab6f',
     },
+    www: {
+      main: '#0f0'
+    }
   },
   colors: {
     primary: "#192b40",

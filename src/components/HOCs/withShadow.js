@@ -1,19 +1,24 @@
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/styles';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
 
-const useStyles = theme => ({
-    root: { boxShadow: props => props.shadow ? theme.custom.shadows[props.shadow] : 'unset' }
-});
+export default function(WrappedComponent){
 
-const withShadow = (WrappedComponent) => {
+    WithShadow.propTypes = {
+        shadow: PropTypes.oneOf([1,2,3,4,5])
+    };
 
-    const HOC = props => {
-        const { shadow, className='', classes, ...rest } = props;
+    function WithShadow(props){
+        let { shadow, className='', classes, ...rest } = props;
 
-        return <WrappedComponent className={`${classes.root} ${className}`} { ...rest } />;
+        if(shadow) className = `${classes.root} ${className}`;
+
+        return <WrappedComponent className={className} { ...rest } />;
     }
     
-    return withTheme(withStyles(useStyles)(HOC));
+    const useStyles = theme => ({
+        root: { boxShadow: props => theme.custom.shadows[props.shadow] }
+    });
+    
+    return withStyles(useStyles)(WithShadow);
 };
-
-export default withShadow;
