@@ -92,10 +92,9 @@ function Info(props) {
                 />
                 <Icon
                     iconClass='material-icons'
-                    iconName='assignment'
-                    className='myClass'
-                    size={40}
-                    gap={20}
+                    iconName='add'
+                    size={18}
+                    gap={24}
                     color='#f00'
                     preset='round'
                     elevation={3}
