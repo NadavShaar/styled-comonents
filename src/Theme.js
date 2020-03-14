@@ -1,6 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { createMuiTheme, ThemeProvider as MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const shadows = {
   0: "none",
@@ -11,29 +10,39 @@ const shadows = {
   5: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"
 }
 
+const sizes = {
+  buttons: {
+    sm: { fontSize: 14, padding: 10 },
+    md: { fontSize: 18, padding: 14 },
+    lg: { fontSize: 24, padding: 18 }
+  }
+};
+
 const lightTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#6772e5',
+      main: '#3f71b5',
     },
     secondary: {
-      main: '#26599e',
+      main: '#e5679e',
     },
-    www: {
-      main: '#0f0',
+    customColor: {
+      main: '#23a283',
     },
-  },
-  colors: {
-    primary: "#192b40",
-    secondary: "#26599e",
-    color1: "#fff",
-    color2: "#000"
-  },
-  backgrounds: {
-    color1: "#fff"
   },
   custom: {
-    shadows: shadows
+    colors: {
+      primary: "#3f71b5",
+      secondary: "#e5679e",
+      color1: "#fff",
+      color2: "#000",
+      color3: "aliceblue"
+    },
+    backgrounds: {
+      color1: "#fff"
+    },
+    shadows,
+    sizes
   }
 });
 
@@ -45,30 +54,32 @@ const darkTheme = createMuiTheme({
     secondary: {
       main: '#2fab6f',
     },
-    www: {
+    customColor: {
       main: '#0f0'
     }
   },
-  colors: {
-    primary: "#192b40",
-    secondary: "#2fab6f",
-    color1: "#fff",
-    color2: "#000"
-  },
-  backgrounds: {
-    color1: "#111"
-  },
   custom: {
-    shadows: shadows
+    colors: {
+      primary: "#192b40",
+      secondary: "#2fab6f",
+      color1: "#fff",
+      color2: "#000",
+      color3: "aliceblue"
+    },
+    backgrounds: {
+      color1: "#111"
+    },
+    shadows,
+    sizes
   }
 });
 
+console.log(lightTheme)
+
 const Theme = ({ children, darkMode }) => (
-  <MuiThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <StylesProvider injectFirst={false}>{children}</StylesProvider>
-    </ThemeProvider>
-  </MuiThemeProvider>
+  <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    {children}
+  </ThemeProvider>
 );
 
 

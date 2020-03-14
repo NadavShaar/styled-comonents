@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: props => props.size,
         width: props => props.size,
         height: props => props.size,
-        color: props => props.color || theme.colors.color1,
+        color: props => props.color || theme.custom.colors.color1,
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center'

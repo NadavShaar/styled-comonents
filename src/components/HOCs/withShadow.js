@@ -10,7 +10,7 @@ export default function(WrappedComponent){
 
     function WithShadow(props){
         let { shadow, className='', classes, ...rest } = props;
-
+        
         if(shadow) className = `${classes.root} ${className}`;
 
         return <WrappedComponent className={className} { ...rest } />;

@@ -18,8 +18,8 @@ function withColor(WrappedComponent){
                     ...theme.palette,
                     primary: theme.palette[color]
                 }
-            })
-
+            });
+            
             return (
                 <ThemeProvider theme={theme}>
                     <WrappedComponent color='primary' {...rest}/>
@@ -27,7 +27,7 @@ function withColor(WrappedComponent){
             )
         }
 
-        return <WrappedComponent { ...rest } />;
+        return <WrappedComponent color={color} { ...rest } />;
     }
     return withTheme(HOC1);
 };
