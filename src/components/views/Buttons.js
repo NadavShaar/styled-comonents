@@ -11,7 +11,7 @@ function Buttons(props) {
     const classes = useStyles(props);
 
     return (
-        <div className={classes.root}>
+        <div className={classes.wrapper}>
             <div className={classes.root}>
                 <Switch
                     checked={props.darkMode}
@@ -90,15 +90,14 @@ function Buttons(props) {
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
-        
+        background: theme.custom.colors.color3
     },
     root: {
         display: 'flex',
         height: '100%',
         flexDirection: 'column',
-        // width: 960,
-        // margin: '0 auto',
-        background: theme.custom.colors.color3
+        width: 960,
+        margin: '0 auto'
     },
     category: {
         display: 'flex',
