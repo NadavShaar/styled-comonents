@@ -36,10 +36,13 @@ const lightTheme = createMuiTheme({
       secondary: "#e5679e",
       color1: "#fff",
       color2: "#000",
-      color3: "aliceblue"
+      color3: '#93acc3',
+      color4: '#414141',
+      color5: '#23a283',
     },
     backgrounds: {
-      color1: "#fff"
+      color1: "aliceblue",
+      color2: "#fff",
     },
     shadows,
     sizes
@@ -49,25 +52,28 @@ const lightTheme = createMuiTheme({
 const darkTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#192b40',
+      main: '#d4af38',
     },
     secondary: {
-      main: '#2fab6f',
+      main: '#f38d18',
     },
     customColor: {
-      main: '#0f0'
+      main: '#95e422'
     }
   },
   custom: {
     colors: {
-      primary: "#192b40",
-      secondary: "#2fab6f",
+      primary: "#d4af38",
+      secondary: "#f38d18",
       color1: "#fff",
       color2: "#000",
-      color3: "aliceblue"
+      color3: '#929292',
+      color4: '#c1c1c1',
+      color5: '#95e422'
     },
     backgrounds: {
-      color1: "#111"
+      color1: '#2f2f2f',
+      color2: "#545454"
     },
     shadows,
     sizes

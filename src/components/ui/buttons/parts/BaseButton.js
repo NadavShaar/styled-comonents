@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
-import{ Button } from '@material-ui/core';
+import { makeStyles, withTheme } from '@material-ui/styles';
+import { Button } from '@material-ui/core';
+import Icon from './../../icons';
 
 BaseButton.propTypes = {
     size: PropTypes.string
@@ -15,16 +16,27 @@ function BaseButton(props) {
 
     const classes = useStyles(props);
 
-    const { children, className, size, ...rest } = props;
+    const { children, className, size, iconProps, ...rest } = props;
 
-    return <Button { ...rest } className={`${classes.root} + ${className}`}>{ children }</Button>;
+    let iconColorProp = {}; 
+    if(props.variant !== 'contained' && props.color) iconColorProp = {color: props.theme.palette[props.color].main};
+
+    return (
+        <Button { ...rest } className={`${classes.root} + ${className}`}>
+            { iconProps ? <Icon { ...iconProps } { ...iconColorProp } className={`${classes.icon} ${iconProps.className || ''}`} /> : null }
+            { children }
+        </Button>
+    )
 }
 
 const useStyles = makeStyles(theme => ({
     root: {
         fontSize: props => theme.custom.sizes.buttons[props.size].fontSize,
         height: 'fit-content'
+    },
+    icon: {
+        marginRight: 5
     }
 }));
 
-export default BaseButton;
+export default withTheme(BaseButton);

@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme, withTheme } from '@material-ui/core/styles';
 
-function withColor(WrappedComponent){
+export default function(WrappedComponent){
 
-    HOC1.propTypes = {
+    WithColor.propTypes = {
         color: PropTypes.string
     };
 
-    function HOC1(props){
+    function WithColor(props){
         let { color, theme, ...rest } = props;
 
         if(color && color !== 'primary' && color !== 'secondary'){
@@ -19,7 +19,7 @@ function withColor(WrappedComponent){
                     primary: theme.palette[color]
                 }
             });
-            
+
             return (
                 <ThemeProvider theme={theme}>
                     <WrappedComponent color='primary' {...rest}/>
@@ -29,7 +29,6 @@ function withColor(WrappedComponent){
 
         return <WrappedComponent color={color} { ...rest } />;
     }
-    return withTheme(HOC1);
+    
+    return withTheme(WithColor);
 };
-
-export default withColor;
