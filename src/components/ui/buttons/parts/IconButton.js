@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import { makeStyles, withTheme } from '@material-ui/styles';
 import { IconButton as MUIIconButton } from '@material-ui/core';
 import { darken } from './../../../../utils';
@@ -21,12 +22,14 @@ function IconButton(props) {
 
     let { children, size, inverted, className, iconProps, ...rest } = props;
 
-    if(props.inverted) className = `${className} ${classes.rootInverted}`
-    else className = `${className} ${classes.root}`
+    if(props.inverted) className = clsx([className, classes.rootInverted]);
+    else className = clsx([className, classes.root]);
+
+    let iconClassNames = inverted ? clsx([classes.icon, iconProps.className]) : clsx([iconProps.className]);
 
     return (
         <MUIIconButton { ...rest } className={className}>
-            <Icon size={props.theme.custom.sizes.buttons[props.size].fontSize} color='primary' className={inverted ? classes.icon : ''} { ...iconProps } />
+            <Icon size={props.theme.custom.sizes.buttons[props.size].fontSize} color='primary' className={iconClassNames} { ...iconProps } />
         </MUIIconButton>
     );
 }
@@ -43,7 +46,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     icon: {
-        color: theme.custom.colors.color1
+        color: props => theme.palette[props.color].contrastText
     }
 }));
 

@@ -22,9 +22,11 @@ const lightTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#3f71b5',
+      contrastText: '#fff',
     },
     secondary: {
       main: '#e5679e',
+      contrastText: '#fff',
     },
     customColor: {
       main: '#23a283',
@@ -53,9 +55,11 @@ const darkTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#d4af38',
+      contrastText: '#414141',
     },
     secondary: {
       main: '#f38d18',
+      contrastText: '#414141',
     },
     customColor: {
       main: '#95e422'
@@ -87,6 +91,5 @@ const Theme = ({ children, darkMode }) => (
     {children}
   </ThemeProvider>
 );
-
 
 export default Theme;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 
 
@@ -21,7 +22,7 @@ function BaseIcon(props) {
 
     const { iconClass, iconName, color, size, children, className, classes, ...rest } = props;
 
-    return <i className={`${iconClass} ${className} ${classes1.root}`} {...rest}>{iconName}</i>;
+    return <i className={clsx([iconClass, className, classes1.root])} {...rest}>{iconName}</i>;
 }
 
 const useStyles = makeStyles(theme => ({
