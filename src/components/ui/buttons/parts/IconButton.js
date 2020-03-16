@@ -20,7 +20,7 @@ function IconButton(props) {
 
     const classes = useStyles(props);
 
-    let { children, size, inverted, className, iconProps, ...rest } = props;
+    let { children, size, inverted, className, theme, iconProps, ...rest } = props;
 
     if(props.inverted) className = clsx([className, classes.rootInverted]);
     else className = clsx([className, classes.root]);
