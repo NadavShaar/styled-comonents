@@ -21,7 +21,6 @@ function BaseButton(props) {
 
     const classes = useStyles(props);
 
-
     return (
         <Button { ...rest } className={clsx([classes.root, className])}>
             { iconProps ? <Icon { ...iconProps } className={clsx([classes.icon, iconProps.className])} /> : null }

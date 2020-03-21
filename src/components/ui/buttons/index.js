@@ -3,6 +3,7 @@ import BaseButton from './parts/BaseButton';
 import IconButton from './parts/IconButton';
 import withColor from './../../HOCs/withColor';
 import withShadow from './../../HOCs/withShadow';
+import ErrorBoundary from './../../utils/ErrorBoundary';
 
 function Button(props) {
     const { preset, variant, ...rest } = props;
@@ -16,4 +17,4 @@ function Button(props) {
     }
 };
 
-export default withShadow(withColor(Button));
+export default withShadow(withColor(({children, ...rest}) => <ErrorBoundary><Button { ...rest }>{children}</Button></ErrorBoundary>));
