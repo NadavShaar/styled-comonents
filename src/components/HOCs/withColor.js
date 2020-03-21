@@ -8,26 +8,27 @@ export default function(WrappedComponent){
         color: PropTypes.string
     };
 
+    WithColor.defaultProps = {
+        color: 'primary'
+    };
+
     function WithColor(props){
         let { color, theme, ...rest } = props;
 
-        if(color && color !== 'primary' && color !== 'secondary'){
-            theme = createMuiTheme({
-                ...theme,
-                palette: {
-                    ...theme.palette,
-                    primary: theme.palette[color]
-                }
-            });
+        theme = createMuiTheme({
+            ...theme,
+            palette: {
+                ...theme.palette,
+                primary: theme.palette[color]
+            }
+        });
 
-            return (
-                <ThemeProvider theme={theme}>
-                    <WrappedComponent color='primary' {...rest}/>
-                </ThemeProvider>
-            )
-        }
+        return (
+            <ThemeProvider theme={theme}>
+                <WrappedComponent color='primary' {...rest}/>
+            </ThemeProvider>
+        )
 
-        return <WrappedComponent color={color} { ...rest } />;
     }
     
     return withTheme(WithColor);

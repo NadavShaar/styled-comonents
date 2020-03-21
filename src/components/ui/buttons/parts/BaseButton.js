@@ -6,18 +6,21 @@ import { Button } from '@material-ui/core';
 import Icon from './../../icons';
 
 BaseButton.propTypes = {
-    size: PropTypes.string
+    size: PropTypes.string,
+    color: PropTypes.string
 };
 
 BaseButton.defaultProps = {
-    size: 'sm'
+    size: 'sm',
+    color: 'secondary'
 };
 
 function BaseButton(props) {
 
+    const { children, className, size, iconProps, theme, ...rest } = props;
+
     const classes = useStyles(props);
 
-    const { children, className, size, iconProps, theme, ...rest } = props;
 
     return (
         <Button { ...rest } className={clsx([classes.root, className])}>

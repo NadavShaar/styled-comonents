@@ -32,8 +32,8 @@ function Buttons(props) {
 
                                         return (
                                             <div key={idx} className={classes.box}>
-                                                <span className={classes.value}>{values}</span>
                                                 <Button { ...btnProps }>{btnProps.color}</Button>
+                                                <span className={classes.value}>{values}</span>
                                             </div>
                                         )
                                     })

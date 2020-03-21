@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Theme from "./Theme";
+import Theme from "./theme";
 import './App.scss';
 import Buttons from './components/views/Buttons';
 
