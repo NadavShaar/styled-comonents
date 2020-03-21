@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import clsx from 'clsx';
+import { withTheme, makeStyles } from '@material-ui/styles';
 
 export default function(WrappedComponent){
 
@@ -9,16 +10,17 @@ export default function(WrappedComponent){
     };
 
     function WithShadow(props){
-        let { shadow, className='', classes, ...rest } = props;
+        let { shadow, className='', ...rest } = props;
+        const classes = useStyles(props);
         
-        if(shadow) className = `${classes.root} ${className}`;
+        if(shadow) className = clsx([classes.root, className]);
 
         return <WrappedComponent className={className} { ...rest } />;
     }
     
-    const useStyles = theme => ({
+    const useStyles = makeStyles(theme => ({
         root: { boxShadow: props => theme.custom.shadows[props.shadow] }
-    });
+    }));
     
-    return withStyles(useStyles)(WithShadow);
+    return withTheme(WithShadow);
 };
