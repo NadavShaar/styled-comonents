@@ -14,8 +14,8 @@ const darkTheme = createMuiTheme({
         customColor: {
             main: '#95e422'
         }
-        },
-        custom: {
+    },
+    custom: {
         colors: {
             primary: "#d4af38",
             secondary: "#f38d18",

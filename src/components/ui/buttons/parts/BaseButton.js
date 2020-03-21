@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles, withTheme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Button } from '@material-ui/core';
 import Icon from './../../icons';
 
@@ -36,8 +36,8 @@ const useStyles = makeStyles(theme => ({
     },
     icon: {
         marginRight: 5,
-        color: props => (props.variant !== 'contained' && props.color) ? props.theme.palette[props.color].main : theme.palette[props.color].contrastText
+        color: props => (props.variant !== 'contained' && props.color) ? theme.palette[props.color].main : theme.palette[props.color].contrastText
     }
 }));
 
-export default withTheme(BaseButton);
+export default BaseButton;

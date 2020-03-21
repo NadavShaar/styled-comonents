@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles, withTheme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { IconButton as MUIIconButton } from '@material-ui/core';
 import { darken } from './../../../../utils';
 import Icon from './../../icons/';
@@ -50,4 +50,4 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default withTheme(IconButton);
+export default IconButton;

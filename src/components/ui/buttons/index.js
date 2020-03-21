@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTheme } from '@material-ui/styles';
 import BaseButton from './parts/BaseButton';
 import IconButton from './parts/IconButton';
 import withColor from './../../HOCs/withColor';
@@ -16,4 +17,4 @@ function Button(props) {
     }
 };
 
-export default withShadow(withColor(Button));
+export default withShadow(withColor(withTheme(Button)));

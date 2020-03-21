@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { withTheme, makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 
 export default function(WrappedComponent){
 
@@ -22,5 +22,5 @@ export default function(WrappedComponent){
         root: { boxShadow: props => theme.custom.shadows[props.shadow] }
     }));
     
-    return withTheme(WithShadow);
+    return WithShadow;
 };
