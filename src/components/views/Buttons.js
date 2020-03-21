@@ -7,6 +7,7 @@ import buttonsConfig from './buttonsConfig';
 function Buttons(props) {
 
     const classes = useStyles(props);
+    console.log(props.darkMode)
 
     return (
         <div className={classes.wrapper}>
@@ -15,7 +16,7 @@ function Buttons(props) {
                     <Switch
                         checked={props.darkMode}
                         color='primary'
-                        onChange={() => props.toggleTheme(props.darkMode)}
+                        onChange={() => props.toggleTheme(!props.darkMode)}
                     />
                     <span className={classes.themeLabel}>{props.darkMode ? 'Dark Mode' : 'Light Mode'}</span>
                 </div>
