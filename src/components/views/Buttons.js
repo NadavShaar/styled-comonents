@@ -7,7 +7,6 @@ import buttonsConfig from './buttonsConfig';
 function Buttons(props) {
 
     const classes = useStyles(props);
-    console.log(props.darkMode)
 
     return (
         <div className={classes.wrapper}>
